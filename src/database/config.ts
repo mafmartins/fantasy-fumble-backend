@@ -11,17 +11,14 @@ type DbConnection = {
   user: string;
   password: string;
   database: string;
-  dbLogging: boolean;
 };
 
 const connection: DbConnection = {
   host: process.env.DB_HOST || "ff-db",
   port: Number(process.env.DB_PORT) || 5432,
   user: process.env.DB_USER || "ff-db-user",
-  password: process.env.DB_PASSWORD || "dd-db-password",
+  password: process.env.DB_PASSWORD || "ff-db-password",
   database: process.env.DB_NAME || "ff-db",
-  dbLogging:
-    process.env.NODE_ENV === "development" || process.env.LOG === "true",
 };
 
 export default connection;
