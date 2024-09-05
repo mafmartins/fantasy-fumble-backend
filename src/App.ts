@@ -1,7 +1,7 @@
 import express, { Express, Request, Response } from "express";
 import dotenv from "dotenv";
 
-import { testDBConnection } from "./database/dBUtils";
+import { testDBConnection } from "./database/utils";
 
 dotenv.config();
 
