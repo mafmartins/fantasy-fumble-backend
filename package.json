@@ -1,0 +1,36 @@
+{
+  "name": "fantasy-fumble-backend",
+  "version": "0.1.0",
+  "description": "The Fantasy Fumble Backend powers the fantasy football game designed for NFL newcomers.",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "npx tsc",
+    "start": "node dist/index.js",
+    "dev": "nodemon src/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mafmartins/fantasy-fumble-backend.git"
+  },
+  "keywords": [
+    "fantasy",
+    "football"
+  ],
+  "author": "Márcio Martins",
+  "license": "AGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/mafmartins/fantasy-fumble-backend/issues"
+  },
+  "homepage": "https://github.com/mafmartins/fantasy-fumble-backend#readme",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.5.4",
+    "nodemon": "^3.1.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4"
+  }
+}
