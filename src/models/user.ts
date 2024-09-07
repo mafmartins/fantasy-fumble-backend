@@ -1,5 +1,5 @@
 import { DataTypes, Model, Optional } from "sequelize";
-import dBConn from "../connection";
+import dBConn from "../database/connection";
 
 interface UserAttributes {
   id: number;
