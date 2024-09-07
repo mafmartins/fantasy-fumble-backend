@@ -41,8 +41,30 @@ services:
       retries: 5
     networks:
       - ff-network
+  db-test:
+    image: postgres
+    restart: always
+    user: postgres
+    secrets:
+      - db-password
+    volumes:
+      - db-test-data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=ff-db-user
+      - POSTGRES_DB=ff-db-test
+      - POSTGRES_PASSWORD_FILE=/run/secrets/db-password
+    ports:
+      - 127.0.0.1:5433:5432
+    healthcheck:
+      test: ["CMD", "pg_isready"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - ff-network
 volumes:
   db-data:
+  db-test-data:
 secrets:
   db-password:
     file: db-password.txt

@@ -4,7 +4,7 @@ import dBConnection from "./connection";
 export const testDBConnection = async (exitApp: Boolean = false) => {
   try {
     await dBConnection.authenticate();
-    await dBConnection.sync();
+    await dBConnection.sync({ alter: true });
     logger.info("Connection has been established successfully.");
   } catch (error) {
     logger.error("Unable to connect to the database:", error);

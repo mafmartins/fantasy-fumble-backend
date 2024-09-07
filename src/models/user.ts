@@ -13,9 +13,9 @@ class User
   extends Model<UserAttributes, UserCreationAttributes>
   implements UserAttributes
 {
-  public id: number = 0;
-  public username: string = "";
-  public email: string = "";
+  public id: number;
+  public username: string;
+  public email: string;
 
   public readonly createdAt!: Date;
   public readonly updatedAt!: Date;
@@ -40,7 +40,7 @@ User.init(
   {
     sequelize: dBConn,
     modelName: "User",
-    tableName: "User",
+    tableName: "user",
     timestamps: true,
   }
 );

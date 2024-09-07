@@ -1,9 +1,9 @@
 import express from "express";
 
-import { helloWorld } from "../controllers/hello-world";
+import { getUsers } from "../controllers/users";
 
 const router = express.Router();
 
-router.get("/", helloWorld);
+router.get("/", getUsers);
 
 export default router;

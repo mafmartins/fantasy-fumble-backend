@@ -12,13 +12,17 @@ type DbConnection = {
   password: string;
   database: string;
 };
+const database_port =
+  process.env.NODE_ENV === "test" ? 5433 : process.env.DB_PORT;
+const database_name =
+  process.env.NODE_ENV === "test" ? "ff-db-test" : process.env.DB_NAME;
 
 const connection: DbConnection = {
   host: process.env.DB_HOST || "ff-db",
-  port: Number(process.env.DB_PORT) || 5432,
+  port: Number(database_port) || 5432,
   user: process.env.DB_USER || "ff-db-user",
   password: process.env.DB_PASSWORD || "ff-db-password",
-  database: process.env.DB_NAME || "ff-db",
+  database: database_name || "ff-db",
 };
 
 export default connection;
